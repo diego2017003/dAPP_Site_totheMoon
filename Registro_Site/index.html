@@ -12,6 +12,17 @@
     <!-- Title Page-->
     <title>Seja Certificado</title>
 
+    <!--Crypto-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha1-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/lib-typedarrays-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    
+
+
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -35,7 +46,7 @@
                     <h2 class="title">Registre seu certificado</h2>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Nome no certificado" name="name">
+                            <input class="input--style-1" type="text" id="cert_name" placeholder="Nome no certificado" name="name">
                         </div>
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Nome da instituição" name="name">
@@ -43,8 +54,8 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="Data de expedição" name="birthday">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    <input class="input--style-1 js-datepicker" id="carga_h" type="text" placeholder="Carga Horaria" name="carg_h">
+                                    
                                 </div>
                             </div>
                             <div class="col-2">
@@ -82,7 +93,14 @@
 
                         </div>
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Registrar</button>
+                            <button class="btn btn--radius btn--green" id="regist_btn" type="button">Registrar</button>
+                        </div>
+                        <div id="text_status">
+
+                        </div>
+                        
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" id="btn" type="button">Verificar</button>
                         </div>
                     </form>
                 </div>
@@ -98,7 +116,9 @@
     <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
+    <script src="js/abi.js"></script>
     <script src="js/global.js"></script>
+    
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
